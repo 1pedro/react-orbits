@@ -1,0 +1,35 @@
+/* add css module styles here (optional) */
+
+.atom-nucleus {
+  background-color: #38b6ff;
+  border-radius: 50%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+}
+
+.electron {
+  background-color: white;
+  border-radius: 50px;
+  left: 50%;
+  position: absolute;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  top: 0%;
+}
+
+.atom-orbit {
+  border-radius: 50%;
+  position: absolute;
+}
+
+@keyframes spin-right {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-left {
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}
