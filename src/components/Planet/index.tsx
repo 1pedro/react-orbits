@@ -1,5 +1,5 @@
-import React from 'react'
-import { PlanetProps } from '../../types'
+import React from 'react';
+import { PlanetProps } from '../../types';
 
 function Planet({
   planetIndex = 0,
@@ -12,17 +12,17 @@ function Planet({
   borderSize = 1,
   animationDirection,
   shouldSpin = true,
-  padding
+  padding,
 }: PlanetProps) {
-  const oppositeDirection = animationDirection === 'left' ? 'right' : 'left'
-  const margin = ((size / 20) * 10 + borderSize / 2) * -1
+  const oppositeDirection = animationDirection === 'left' ? 'right' : 'left';
+  const margin = ((size / 20) * 10 + borderSize / 2) * -1;
   const bg = backgroundImageURL
     ? { backgroundImage: `url('${backgroundImageURL}')` }
-    : { backgroundColor }
+    : { backgroundColor };
 
   return (
     <div
-      className='electron'
+      className="electron"
       style={Object.assign(
         {
           width: size,
@@ -33,17 +33,15 @@ function Planet({
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           padding,
-          rotate: `${
-            startDegree ? `-${planetIndex * degrees}deg` : `${startDegree}deg`
-          }`,
+          rotate: `${startDegree ? `-${planetIndex * degrees}deg` : `${startDegree}deg`}`,
           animation: `spin-${
             shouldSpin ? animationDirection : oppositeDirection
-          } ${animationSpeedInSeconds}s linear infinite`
+          } ${animationSpeedInSeconds}s linear infinite`,
         },
-        bg
+        bg,
       )}
     />
-  )
+  );
 }
 
-export default Planet
+export default Planet;

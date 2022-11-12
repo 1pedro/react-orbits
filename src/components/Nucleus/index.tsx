@@ -1,5 +1,5 @@
-import React from 'react'
-import { NucleoProps } from '../../types'
+import React from 'react';
+import { NucleoProps } from '../../types';
 
 function Nucleus({
   shouldSpin = true,
@@ -7,14 +7,14 @@ function Nucleus({
   size = 20,
   animationSpeedInSeconds = 2,
   backgroundImageURL,
-  backgroundColor = 'red'
+  backgroundColor = 'red',
 }: NucleoProps) {
-  const margin = (size / 2) * -1
-  const oppositeDirection = animationDirection === 'left' ? 'right' : 'left'
+  const margin = (size / 2) * -1;
+  const oppositeDirection = animationDirection === 'left' ? 'right' : 'left';
 
   return (
     <div
-      className='atom-nucleus'
+      className="atom-nucleus"
       style={{
         backgroundColor,
         backgroundImage: `url('${backgroundImageURL}')`,
@@ -28,10 +28,10 @@ function Nucleus({
         width: size,
         height: size,
         marginTop: `${margin}px`,
-        marginLeft: `${margin}px`
+        marginLeft: `${margin}px`,
       }}
     />
-  )
+  );
 }
 
-export default Nucleus
+export default Nucleus;

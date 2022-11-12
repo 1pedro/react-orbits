@@ -13,14 +13,14 @@ npm install --save react-planets
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import MyComponent from 'react-planets'
-import 'react-planets/dist/index.css'
+import MyComponent from 'react-planets';
+import 'react-planets/dist/index.css';
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <MyComponent />;
   }
 }
 ```

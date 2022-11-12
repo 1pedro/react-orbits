@@ -1,4 +1,5 @@
 {
+  "extends": "@1pedro/tsconfig",
   "compilerOptions": {
     "outDir": "dist",
     "module": "esnext",

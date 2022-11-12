@@ -1,32 +1,10 @@
-import React from 'react'
-import Orbit from '../Orbit'
-import { getSpecificChild } from '../../helpers'
+import React from 'react';
 
-type OrbitComponent = React.ReactElement<typeof Orbit>
+import { getSpecificChild } from '../../helpers';
+import { ReactPlanetsConfig } from '../../types';
 
-interface ReactPlanetsProps {
-  children: OrbitComponent | OrbitComponent[]
-  marginSpace: number
-  initialSizes: number
-}
-
-function ReactPlanets({
-  marginSpace,
-  initialSizes,
-  children
-}: ReactPlanetsProps) {
-  console.log({ children })
-  const Orbits: JSX.Element[] = getSpecificChild(
-    children,
-    ['Orbit'],
-    'ReactPlanet'
-  )
-
-  console.log('--> ReactPlanets')
-
-  console.log({ marginSpace, initialSizes })
-
-  console.log({ Orbits })
+function ReactPlanets({ marginSpace, initialSizes, children }: ReactPlanetsConfig) {
+  const Orbits: JSX.Element[] = getSpecificChild(children, ['Orbit'], 'ReactPlanet');
 
   return (
     <React.Fragment>
@@ -35,11 +13,11 @@ function ReactPlanets({
           initialSizes,
           marginSpace,
           index: i,
-          key: i
-        })
+          key: i,
+        });
       })}
     </React.Fragment>
-  )
+  );
 }
 
-export default ReactPlanets
+export default ReactPlanets;
