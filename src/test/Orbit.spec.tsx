@@ -1,4 +1,4 @@
-import Orbit from '../src/components/Orbit';
+import Orbit from '../components/Orbit';
 
 describe('Orbit', () => {
   it('is truthy', () => {
