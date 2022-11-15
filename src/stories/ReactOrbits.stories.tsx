@@ -5,25 +5,25 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Nucleus from '../components/Nucleus';
 import Orbit from '../components/Orbit';
 import Planet from '../components/Planet';
-import ReactPlanets from '../components/ReactPlanets';
+import ReactOrbits from '../components/ReactOrbits';
 
 export default {
-  title: 'Example/ReactPlanets',
-  component: ReactPlanets,
+  title: 'Example/ReactOrbits',
+  component: ReactOrbits,
   argTypes: {},
-  subcomponents: { ReactPlanets },
+  subcomponents: { ReactPlanets: ReactOrbits },
   parameters: {
     layout: 'centered',
   },
-} as ComponentMeta<typeof ReactPlanets>;
+} as ComponentMeta<typeof ReactOrbits>;
 
 function Container({ children }: { children: JSX.Element | JSX.Element[] }) {
   return <div style={{ width: 200, height: 300 }}>{children}</div>;
 }
 
-const Template: ComponentStory<typeof ReactPlanets> = (args: any) => (
+const Template: ComponentStory<typeof ReactOrbits> = (args: any) => (
   <Container>
-    <ReactPlanets {...args} />
+    <ReactOrbits {...args} />
   </Container>
 );
 

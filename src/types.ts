@@ -30,9 +30,9 @@ export interface PlanetPropsConfig {
   degrees?: number;
   margin?: number;
   padding?: number;
-  spin?: Spin;
   shouldSpin?: boolean;
   size: number;
+  spin?: Spin;
 }
 
 export interface PlanetProps extends PlanetPropsConfig {
@@ -57,7 +57,7 @@ export interface OrbitProps {
 
 type OrbitComponent = React.ReactElement<typeof Orbit>;
 
-export interface ReactPlanetsConfig {
+export interface ReactOrbitsConfig {
   children: OrbitComponent | OrbitComponent[];
   firstOrbitDiameter: number;
   marginBetweenOrbits: number;

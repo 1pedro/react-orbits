@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { getSpecificChild } from '../../helpers';
-import { ReactPlanetsConfig } from '../../types';
+import { ReactOrbitsConfig } from '../../types';
 
-function ReactPlanets({ children, firstOrbitDiameter, marginBetweenOrbits }: ReactPlanetsConfig) {
+function ReactOrbits({ children, firstOrbitDiameter, marginBetweenOrbits }: ReactOrbitsConfig) {
   const Orbits: JSX.Element[] = getSpecificChild(children, ['Orbit'], 'ReactPlanet');
 
   return (
@@ -20,4 +20,4 @@ function ReactPlanets({ children, firstOrbitDiameter, marginBetweenOrbits }: Rea
   );
 }
 
-export default ReactPlanets;
+export default ReactOrbits;

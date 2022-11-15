@@ -1,10 +1,10 @@
 {
-  "name": "react-planets",
+  "name": "react-orbits",
   "version": "1.0.0",
   "description": "Made with create-react-library",
   "author": "1pedro",
   "license": "MIT",
-  "repository": "1pedro/react-planets",
+  "repository": "1pedro/react-orbits",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
@@ -23,8 +23,8 @@
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "storybook": "start-storybook -p 6006 -s ./public",
+    "build-storybook": "build-storybook -o ./public"
   },
   "peerDependencies": {
     "react": "^16.0.0"

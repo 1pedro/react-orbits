@@ -21,7 +21,7 @@ import 'react-orbits/dist/index.css';
 class Example extends Component {
   render() {
     return (
-      <ReactPlanets firstOrbitDiameter={200} marginBetweenOrbits={20}>
+      <ReactOrbits firstOrbitDiameter={200} marginBetweenOrbits={20}>
         <Orbit borderColor="red" spin="left">
           <Nucleus backgroundColor="red" size={20} />
           <Planet size={10} spin="left" />
@@ -30,7 +30,7 @@ class Example extends Component {
           <Planet backgroundColor="blue" size={10} />
           <Planet backgroundColor="green" shouldSpin={false} size={20} />
         </Orbit>
-      </ReactPlanets>
+      </ReactOrbits>
     )
   }
 }
