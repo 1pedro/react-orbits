@@ -1,7 +1,7 @@
 {
   "name": "react-orbits",
   "version": "1.0.0",
-  "description": "Made with create-react-library",
+  "description": "React Orbit Component",
   "author": "1pedro",
   "license": "MIT",
   "repository": "1pedro/react-orbits",
@@ -21,8 +21,8 @@
     "test:lint": "eslint .",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
-    "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build",
+    "predeploy": "yarn install && yarn run build && yarn run build-storybook",
+    "deploy": "gh-pages -d ./public",
     "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook -o ./public"
   },
