@@ -23,6 +23,7 @@ export interface PlanetPropsConfig {
   backgroundColor?: string;
   backgroundImageURL?: string;
   borderSize?: number;
+  className?: string;
   degrees?: number;
   margin?: number;
   padding?: number;

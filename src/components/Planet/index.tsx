@@ -1,13 +1,16 @@
+import '../../styles.css';
+
 import React from 'react';
 
 import { PlanetProps } from '../../types';
 
 function Planet({
   animationDirection,
-  animationSpeedInSeconds,
+  animationSpeedInSeconds = 5,
   backgroundColor = 'blue',
   backgroundImageURL,
   borderSize = 1,
+  className,
   degrees,
   padding,
   shouldSpin = true,
@@ -24,7 +27,7 @@ function Planet({
 
   return (
     <div
-      className="electron"
+      className={`electron ${className}`}
       style={{
         width: size,
         height: size,

@@ -22,7 +22,9 @@
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/build",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "peerDependencies": {
     "react": "^16.0.0"
@@ -31,7 +33,16 @@
     "@1pedro/eslint-config": "git+ssh://git@github.com/1pedro/eslint-config.git#0.1.15",
     "@1pedro/prettier-config": "git+ssh://git@github.com/1pedro/prettier-config.git#0.1.2",
     "@1pedro/tsconfig": "git+ssh://git@github.com/1pedro/tsconfig.git#0.1.2",
+    "@babel/core": "^7.20.2",
     "@babel/eslint-plugin": "^7.19.1",
+    "@storybook/addon-actions": "^6.5.13",
+    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-interactions": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/builder-webpack5": "^6.5.13",
+    "@storybook/manager-webpack5": "^6.5.13",
+    "@storybook/react": "^6.5.13",
+    "@storybook/testing-library": "^0.0.13",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
@@ -42,6 +53,7 @@
     "@typescript-eslint/eslint-plugin": "^5.42.1",
     "@typescript-eslint/parser": "^5.42.1",
     "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.3.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
