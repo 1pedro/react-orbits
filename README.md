@@ -1,8 +1,12 @@
 # React Orbits
 
-> Made with create-react-library
+> Create beautiful Orbit Components with React
 
-[![NPM](https://img.shields.io/npm/v/react-orbits.svg)](https://www.npmjs.com/package/react-orbits) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+![Orbit](assets/example.png "React Orbit")
+
+[![NPM](https://img.shields.io/npm/v/react-orbits.svg)](https://www.npmjs.com/package/react-orbits) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-airbnb-brightgreen.svg)](https://airbnb.io/javascript/react/)
+
+## [DEMO](https://1pedro.github.io/react-orbits/?path=/story/example-reactorbits--multiple-orbits)
 
 ## Install
 
