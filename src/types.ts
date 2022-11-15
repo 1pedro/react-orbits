@@ -8,33 +8,36 @@ export interface NucleusPropsConfig {
   animationSpeedInSeconds?: number;
   backgroundColor?: string;
   backgroundImageURL?: string;
+  className?: string;
   margin?: number;
   shouldSpin?: boolean;
   size: number;
 }
 
 export interface NucleoProps extends NucleusPropsConfig {
-  animationDirection?: Spin;
   animationSpeedInSeconds?: number;
+  spin?: Spin;
 }
 
 export interface PlanetPropsConfig {
   animationSpeedInSeconds?: number;
   backgroundColor?: string;
   backgroundImageURL?: string;
-  borderSize?: number;
+  borderColor?: string;
+  borderStyle?: string;
+  borderWidth?: number;
   className?: string;
   degrees?: number;
   margin?: number;
   padding?: number;
-  planetIndex?: number;
+  spin?: Spin;
   shouldSpin?: boolean;
   size: number;
 }
 
 export interface PlanetProps extends PlanetPropsConfig {
-  animationDirection?: Spin;
-  animationSpeedInSeconds?: number;
+  borderSize?: number;
+  planetIndex?: number;
 }
 
 export interface OrbitProps {

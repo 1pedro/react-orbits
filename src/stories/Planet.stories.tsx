@@ -2,20 +2,21 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import Planet from '../components/Planet';
+import { PlanetPropsConfig } from '../types';
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Example/Planet',
   component: Planet,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
+    borderSize: { control: false },
+    planetIndex: { control: false },
     backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof Planet>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Planet> = args => (
-  <div style={{ position: 'relative', width: '100%', marginTop: 200 }}>
+// eslint-disable-next-line react/function-component-definition
+const Template: ComponentStory<typeof Planet> = (args: PlanetPropsConfig) => (
+  <div style={{ position: 'relative', width: '100%', marginTop: '50vh' }}>
     <Planet {...args} />;
   </div>
 );
@@ -31,7 +32,7 @@ WithBackgroundImage.args = {
   size: 40,
   backgroundImageURL:
     'https://lh3.googleusercontent.com/StND2cg3sSbR6l-AHr3VdxKziIhEP4kYHQiTppD-aKc6gwn7PVdht1YqzjWSmwf5JLWf=w200-rwa',
-  animationDirection: 'no-spin',
+  spin: 'no-spin',
 };
 
 export const WithAnimation = Template.bind({});
@@ -39,29 +40,12 @@ WithAnimation.args = {
   size: 40,
   backgroundImageURL:
     'https://lh3.googleusercontent.com/StND2cg3sSbR6l-AHr3VdxKziIhEP4kYHQiTppD-aKc6gwn7PVdht1YqzjWSmwf5JLWf=w200-rwa',
-  animationDirection: 'left',
+  spin: 'left',
   animationSpeedInSeconds: 5,
 };
 
 export const WithCustomCSSClasses = Template.bind({});
 WithCustomCSSClasses.args = {
-  className: 'planet-cyan',
+  className: 'planet-cyan nice-shadow',
   size: 40,
 };
-
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//   label: 'Button',
-// };
-//
-// export const Large = Template.bind({});
-// Large.args = {
-//   size: 'large',
-//   label: 'Button',
-// };
-//
-// export const Small = Template.bind({});
-// Small.args = {
-//   size: 'small',
-//   label: 'Button',
-// };

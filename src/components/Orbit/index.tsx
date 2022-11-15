@@ -7,6 +7,7 @@ function OrbitSkeleton({
   borderColor,
   borderSize,
   children: child,
+  className,
   degrees,
   height,
   index: i,
@@ -27,7 +28,7 @@ function OrbitSkeleton({
   return (
     <div
       key={i}
-      className="atom-orbit"
+      className={`atom-orbit ${className || ''}`}
       style={{
         border: `${borderSize}px solid ${borderColor}`,
         borderRadius: '50%',
@@ -52,6 +53,7 @@ function Orbit({
   borderColor = 'red',
   borderSize = 2,
   children,
+  className,
   degrees = 20,
   index = 0,
   marginSpace = 0,
@@ -87,6 +89,7 @@ function Orbit({
     orbitMargin,
     spin,
     width,
+    className,
   };
 
   let output;

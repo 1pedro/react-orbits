@@ -5,21 +5,19 @@ import Orbit from './components/Orbit';
 import Planet from './components/Planet';
 import ReactPlanets from './components/ReactPlanets';
 
-export function ExampleComponent() {
+function ExampleComponent() {
   return (
     <ReactPlanets firstOrbitDiameter={200} marginBetweenOrbits={20}>
-      <Orbit borderColor="red" index={1}>
-        <Nucleus
-          animationDirection="left"
-          animationSpeedInSeconds={2}
-          backgroundColor="red"
-          size={20}
-        />
-
-        <Planet animationDirection="left" animationSpeedInSeconds={2} size={10} />
+      <Orbit borderColor="red" spin="left">
+        <Nucleus backgroundColor="red" size={20} />
+        <Planet size={10} spin="left" />
+      </Orbit>
+      <Orbit animationSpeedInSeconds={2} borderColor="#95abd5" spin="right">
+        <Planet backgroundColor="blue" size={10} />
+        <Planet backgroundColor="green" shouldSpin={false} size={20} />
       </Orbit>
     </ReactPlanets>
   );
 }
 
-export { Nucleus, ReactPlanets, Orbit, Planet };
+export { Nucleus, ReactPlanets, Orbit, Planet, ExampleComponent };

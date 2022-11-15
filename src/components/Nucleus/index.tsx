@@ -1,21 +1,24 @@
+import '../../styles.css';
+
 import React from 'react';
 
 import { NucleoProps } from '../../types';
 
 function Nucleus({
-  animationDirection = 'left',
   animationSpeedInSeconds = 2,
   backgroundColor = 'red',
   backgroundImageURL,
+  className,
   shouldSpin = true,
   size = 20,
+  spin = 'left',
 }: NucleoProps) {
   const margin = (size / 2) * -1;
-  const oppositeDirection = animationDirection === 'left' ? 'right' : 'left';
+  const oppositeDirection = spin === 'left' ? 'right' : 'left';
 
   return (
     <div
-      className="atom-nucleus"
+      className={`atom-nucleus ${className || ''}`}
       style={{
         backgroundColor,
         backgroundImage: `url('${backgroundImageURL}')`,
@@ -24,7 +27,7 @@ function Nucleus({
         backgroundSize: 'cover',
         rotate: `0deg`,
         animation: `spin-${
-          shouldSpin ? animationDirection : oppositeDirection
+          shouldSpin ? spin : oppositeDirection
         } ${animationSpeedInSeconds}s linear infinite`,
         width: size,
         height: size,

@@ -2,22 +2,26 @@ import '../../styles.css';
 
 import React from 'react';
 
-import { PlanetProps } from '../../types';
+import { PlanetProps, PlanetPropsConfig } from '../../types';
 
-function Planet({
-  animationDirection,
-  animationSpeedInSeconds = 5,
-  backgroundColor = 'blue',
-  backgroundImageURL,
-  borderSize = 1,
-  className,
-  degrees,
-  padding,
-  shouldSpin = true,
-  size,
-}: PlanetProps) {
-  // eslint-disable-next-line no-console
-  const oppositeDirection = animationDirection === 'left' ? 'right' : 'left';
+function Planet(props: PlanetProps | PlanetPropsConfig) {
+  const {
+    animationSpeedInSeconds = 5,
+    backgroundColor = 'blue',
+    backgroundImageURL,
+    borderColor,
+    borderStyle,
+    borderWidth,
+    className,
+    degrees,
+    padding,
+    shouldSpin = true,
+    size,
+  } = props;
+
+  const spin = (props as PlanetPropsConfig).spin || 'right';
+  const borderSize = (props as PlanetProps).borderSize || 0;
+  const oppositeDirection = spin === 'left' ? 'right' : 'left';
   const margin = ((size / 20) * 10 + borderSize / 2) * -1;
   const bg = backgroundImageURL
     ? { backgroundImage: `url('${backgroundImageURL}')` }
@@ -27,8 +31,11 @@ function Planet({
 
   return (
     <div
-      className={`electron ${className}`}
+      className={`electron ${className || ''}`}
       style={{
+        borderColor,
+        borderWidth,
+        borderStyle,
         width: size,
         height: size,
         marginTop: `${margin}px`,
@@ -39,7 +46,7 @@ function Planet({
         padding,
         rotate: shouldSpin ? '' : `${degreesInverse}deg`,
         animation: `spin-${
-          shouldSpin ? animationDirection : oppositeDirection
+          shouldSpin ? spin : oppositeDirection
         } ${animationSpeedInSeconds}s linear infinite`,
         ...bg,
       }}
