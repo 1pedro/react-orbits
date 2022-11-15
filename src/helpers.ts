@@ -18,12 +18,14 @@ export function getSpecificChild(
 
   if (hasNoSpecificChilds) {
     console.error(` ${parent} expect receive only ${allowedTypes.join(', ')}.`);
+
     return [];
   }
 
   if (Array.isArray(childs) && childs.every(c => allowedTypes.includes(c.type.name))) {
     return childs;
   }
+
   return [];
 }
 

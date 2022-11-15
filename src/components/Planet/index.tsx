@@ -1,45 +1,45 @@
 import React from 'react';
+
 import { PlanetProps } from '../../types';
 
 function Planet({
-  planetIndex = 0,
-  size,
-  degrees = 90,
-  startDegree,
-  animationSpeedInSeconds,
-  backgroundImageURL,
-  backgroundColor = 'blue',
-  borderSize = 1,
   animationDirection,
-  shouldSpin = true,
+  animationSpeedInSeconds,
+  backgroundColor = 'blue',
+  backgroundImageURL,
+  borderSize = 1,
+  degrees,
   padding,
+  shouldSpin = true,
+  size,
 }: PlanetProps) {
+  // eslint-disable-next-line no-console
   const oppositeDirection = animationDirection === 'left' ? 'right' : 'left';
   const margin = ((size / 20) * 10 + borderSize / 2) * -1;
   const bg = backgroundImageURL
     ? { backgroundImage: `url('${backgroundImageURL}')` }
     : { backgroundColor };
 
+  const degreesInverse = Number(degrees) * -1;
+
   return (
     <div
       className="electron"
-      style={Object.assign(
-        {
-          width: size,
-          height: size,
-          marginTop: `${margin}px`,
-          marginLeft: `${margin}px`,
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          padding,
-          rotate: `${startDegree ? `-${planetIndex * degrees}deg` : `${startDegree}deg`}`,
-          animation: `spin-${
-            shouldSpin ? animationDirection : oppositeDirection
-          } ${animationSpeedInSeconds}s linear infinite`,
-        },
-        bg,
-      )}
+      style={{
+        width: size,
+        height: size,
+        marginTop: `${margin}px`,
+        marginLeft: `${margin}px`,
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        padding,
+        rotate: shouldSpin ? '' : `${degreesInverse}deg`,
+        animation: `spin-${
+          shouldSpin ? animationDirection : oppositeDirection
+        } ${animationSpeedInSeconds}s linear infinite`,
+        ...bg,
+      }}
     />
   );
 }

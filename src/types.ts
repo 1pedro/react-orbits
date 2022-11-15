@@ -1,53 +1,53 @@
 import React from 'react';
+
 import Orbit from './components/Orbit';
 
-export type Direction = 'right' | 'left';
+export type Spin = 'right' | 'left' | 'no-spin';
 
 export interface NucleusPropsConfig {
-  size: number;
-  margin?: number;
   animationSpeedInSeconds?: number;
-  backgroundImageURL?: string;
   backgroundColor?: string;
+  backgroundImageURL?: string;
+  margin?: number;
   shouldSpin?: boolean;
+  size: number;
 }
 
 export interface NucleoProps extends NucleusPropsConfig {
-  animationDirection?: Direction;
+  animationDirection?: Spin;
   animationSpeedInSeconds?: number;
 }
 
 export interface PlanetPropsConfig {
-  planetIndex?: number;
-  size: number;
-  margin?: number;
-  degrees?: number;
   animationSpeedInSeconds?: number;
-  backgroundImageURL?: string;
   backgroundColor?: string;
+  backgroundImageURL?: string;
   borderSize?: number;
-  shouldSpin?: boolean;
-  startDegree?: number;
+  degrees?: number;
+  margin?: number;
   padding?: number;
+  planetIndex?: number;
+  shouldSpin?: boolean;
+  size: number;
 }
 
 export interface PlanetProps extends PlanetPropsConfig {
-  animationDirection?: Direction;
+  animationDirection?: Spin;
   animationSpeedInSeconds?: number;
 }
 
 export interface OrbitProps {
+  animationSpeedInSeconds?: number;
   borderColor?: 'red' | 'green' | 'blue';
   borderSize?: number;
-  animationSpeedInSeconds?: number;
-  direction?: Direction;
+  children?: JSX.Element | JSX.Element[];
+  degrees?: number;
+  direction?: Spin;
   index?: number;
   marginSpace?: number;
-  initialSizes?: number;
-  degrees?: number;
-  planets?: PlanetPropsConfig[];
-  children?: JSX.Element | JSX.Element[];
   nucleus?: NucleusPropsConfig;
+  planets?: PlanetPropsConfig[];
+  size?: number;
   useNucleus?: boolean;
 }
 
@@ -55,7 +55,7 @@ type OrbitComponent = React.ReactElement<typeof Orbit>;
 
 export interface ReactPlanetsConfig {
   children: OrbitComponent | OrbitComponent[];
+  firstOrbitDiameter: number;
+  marginBetweenOrbits: number;
   nucleus?: NucleusPropsConfig;
-  marginSpace: number /* marginBetweenOrbits */;
-  initialSizes: number /* firstOrbitDiameter */;
 }

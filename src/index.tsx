@@ -1,25 +1,25 @@
 import * as React from 'react';
 
-import ReactPlanets from './components/ReactPlanets';
 import Nucleus from './components/Nucleus';
 import Orbit from './components/Orbit';
 import Planet from './components/Planet';
+import ReactPlanets from './components/ReactPlanets';
 
-export const ExampleComponent = () => {
+export function ExampleComponent() {
   return (
-    <ReactPlanets marginSpace={20} initialSizes={200}>
+    <ReactPlanets firstOrbitDiameter={200} marginBetweenOrbits={20}>
       <Orbit borderColor="red" index={1}>
         <Nucleus
-          size={20}
-          backgroundColor="red"
           animationDirection="left"
           animationSpeedInSeconds={2}
+          backgroundColor="red"
+          size={20}
         />
 
         <Planet animationDirection="left" animationSpeedInSeconds={2} size={10} />
       </Orbit>
     </ReactPlanets>
   );
-};
+}
 
 export { Nucleus, ReactPlanets, Orbit, Planet };

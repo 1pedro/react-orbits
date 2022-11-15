@@ -1,13 +1,14 @@
 import React from 'react';
+
 import { NucleoProps } from '../../types';
 
 function Nucleus({
-  shouldSpin = true,
   animationDirection = 'left',
-  size = 20,
   animationSpeedInSeconds = 2,
-  backgroundImageURL,
   backgroundColor = 'red',
+  backgroundImageURL,
+  shouldSpin = true,
+  size = 20,
 }: NucleoProps) {
   const margin = (size / 2) * -1;
   const oppositeDirection = animationDirection === 'left' ? 'right' : 'left';
