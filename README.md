@@ -15,7 +15,7 @@ npm install --save react-orbits
 ```tsx
 import React, { Component } from 'react';
 
-import MyComponent from 'react-orbits';
+import ReactOrbits from 'react-orbits';
 import 'react-orbits/dist/index.css';
 
 class Example extends Component {
