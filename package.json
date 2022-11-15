@@ -2,9 +2,24 @@
   "name": "react-orbits",
   "version": "1.0.4",
   "description": "React Orbit Component",
+  "homepage": "https://1pedro.github.io/react-orbits/?path=/story/example-reactorbits--multiple-orbits",
   "author": "1pedro",
   "license": "MIT",
-  "repository": "1pedro/react-orbits",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1pedro/react-orbits.git"
+  },
+  "bugs": {
+    "url": "https://github.com/1pedro/react-orbits/issues"
+  },
+  "keywords": [
+    "react",
+    "react components",
+    "react planets",
+    "react orbit",
+    "orbits",
+    "planets"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
