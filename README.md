@@ -2,7 +2,7 @@
 
 > Create beautiful Orbit Components with React
 
-![Orbit](https://github.com/1pedro/react-orbits/blob/HEAD/assets/example.png?raw=true)
+![Orbit](assets/output.gif)
 
 [![NPM](https://img.shields.io/npm/v/react-orbits.svg)](https://www.npmjs.com/package/react-orbits) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-airbnb-brightgreen.svg)](https://airbnb.io/javascript/react/)
 
