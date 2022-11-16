@@ -67,7 +67,7 @@ function Orbit({
     Nucleus &&
     React.cloneElement(Nucleus, {
       rotate: '0deg',
-      animationDirection: spin,
+      spin,
       animationSpeedInSeconds,
     });
 
@@ -99,7 +99,7 @@ function Orbit({
       const orbitDegrees = i * degrees;
 
       const planet = React.cloneElement(p, {
-        animationDirection: spin,
+        spin,
         animationSpeedInSeconds,
         borderSize,
         degrees: orbitDegrees,
