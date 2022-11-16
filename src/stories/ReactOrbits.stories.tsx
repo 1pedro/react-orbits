@@ -56,7 +56,7 @@ SingleOrbit.args = {
 export const MultipleOrbits = Template.bind({});
 MultipleOrbits.args = {
   firstOrbitDiameter: 200,
-  marginBetweenOrbits: 60,
+  marginBetweenOrbits: 40,
   children: [
     <Orbit borderColor="#95abd5" degrees={90}>
       <Nucleus backgroundColor="coral" size={40} />
@@ -70,7 +70,7 @@ MultipleOrbits.args = {
       <Planet
         animationSpeedInSeconds={2}
         backgroundImageURL="https://lh3.googleusercontent.com/StND2cg3sSbR6l-AHr3VdxKziIhEP4kYHQiTppD-aKc6gwn7PVdht1YqzjWSmwf5JLWf=w200-rwa"
-        size={20}
+        size={10}
         spin="right"
       />
 
@@ -93,6 +93,33 @@ MultipleOrbits.args = {
       />
 
       <Planet animationSpeedInSeconds={2} backgroundColor="lightgreen" size={10} spin="right" />
+    </Orbit>,
+  ],
+};
+
+export const SolarSystem = Template.bind({});
+SolarSystem.args = {
+  firstOrbitDiameter: 120,
+  marginBetweenOrbits: 30,
+  children: [
+    <Orbit animationSpeedInSeconds={2} borderColor="#95abd5" borderSize={1} degrees={90}>
+      <Nucleus backgroundColor="yellow" size={70} />
+      <Planet backgroundColor="#b88600" shouldSpin={false} size={15} spin="left" />
+    </Orbit>,
+
+    <Orbit animationSpeedInSeconds={2.5} borderColor="#95abd5" borderSize={1} degrees={-90}>
+      <Planet backgroundColor="#DEB880" shouldSpin={false} size={10} spin="left" />
+    </Orbit>,
+    <Orbit animationSpeedInSeconds={3} borderColor="#95abd5" borderSize={1} degrees={-90}>
+      <Planet backgroundColor="#6495E0" shouldSpin={false} size={20} spin="left" />
+    </Orbit>,
+
+    <Orbit animationSpeedInSeconds={3.5} borderColor="#95abd5" borderSize={1} degrees={-90}>
+      <Planet backgroundColor="#A52A20" shouldSpin={false} size={16} spin="left" />
+    </Orbit>,
+
+    <Orbit animationSpeedInSeconds={4} borderColor="#95abd5" borderSize={1} degrees={-90}>
+      <Planet backgroundColor="#FAEBD0" shouldSpin={false} size={30} spin="left" />
     </Orbit>,
   ],
 };

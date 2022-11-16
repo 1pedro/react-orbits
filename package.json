@@ -39,7 +39,7 @@
     "predeploy": "run-s validate build build-storybook",
     "prepublish": "run-s validate",
     "deploy": "gh-pages -d ./public",
-    "storybook": "start-storybook -p 6006 -s ./public",
+    "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -o ./public",
     "husky-install": "husky install"
   },
